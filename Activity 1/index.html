@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luffy</title>
+    <style>
+      .container {
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 400px;
+        height: 800px;
+        /* background: #ef230e; */
+        background: #db4332;
+      }
+      .strawhat {
+        width: 228px;
+        height: 300px;
+        margin: 0 auto;
+      }
+      .strawhat-red {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 107px;
+        width: 120px;
+        height: 70px;
+        border-radius: 46% 54% 45% 55% / 57% 59% 41% 43%;
+        background: #ef230e;
+        border-style: solid;
+      }
+      .strawhat-base {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 120px;
+        width: 228px;
+        height: 150px;
+        border-radius: 46% 54% 45% 55% / 57% 59% 41% 43%;
+        background: #fada43;
+        border-style: solid;
+      }
+      .strawhat-top {
+        position: absolute;
+        left: 50%;
+        top: 70px;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 150px;
+        border-radius: 49% 51% 54% 46% / 45% 45% 55% 55%;
+        background: #fada43;
+        border-style: solid;
+      }
+      .face {
+        position: absolute;
+        left: 50%;
+        top: 160px;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 200px;
+      }
+      .face-bottom {
+        position: absolute;
+        width: 90px;
+        height: 80px;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fbe0b3;
+        border-radius: 47% 53% 47% 53% / 83% 85% 15% 17%;
+        box-shadow: 0px -2px 0px -1px inset black;
+      }
+      .face-top-right {
+        position: absolute;
+        width: 100px;
+        height: 120px;
+        left: 100px;
+        top: -20px;
+        transform: translateX(-50%);
+        background: #fbe0b3;
+        border-radius: 47% 53% 20% 80% / 100% 25% 75% 0%;
+        box-shadow: -1px 1px 0px -1px inset black;
+      }
+      .face-top-left {
+        transform: scaleX(-1);
+        left: 30px;
+        box-shadow: -2px 4px 0px -1px inset black;
+      }
+
+      .scar {
+        position: absolute;
+        width: 27px;
+        height: 3px;
+        left: 109px;
+        top: 64px;
+        background: black;
+        border-radius: 45% 27% 64% 22% / 53% 0% 76% 18%;
+        transform: rotate(3deg);
+      }
+      .scar::before {
+        content: "";
+        position: absolute;
+        background: #fbe0b3;
+        width: 27px;
+        height: 5px;
+        top: -3px;
+        border-radius: 39% 43% 47% 52% / 22% 26% 65% 61%;
+      }
+      .scar2 {
+        position: absolute;
+        width: 10px;
+        height: 15px;
+        left: 119px;
+        top: 57px;
+        background: transparent;
+        box-shadow: -1px 0px 0px 0px inset black;
+        transform-origin: center center;
+        transform: rotate(-15deg);
+      }
+      .scar3 {
+        position: absolute;
+        width: 10px;
+        height: 14px;
+        left: 109px;
+        top: 57px;
+        background: transparent;
+        box-shadow: -1px 0px 0px 0px inset black;
+        transform-origin: center center;
+        transform: rotate(-15deg);
+      }
+      .teeth {
+        position: absolute;
+        width: 80px;
+        height: 37px;
+        left: 50%;
+        top: 63px;
+        transform: translateX(-50%);
+        background: transparent;
+        border-radius: 39% 43% 47% 52% / 22% 26% 65% 61%;
+        box-shadow: 0px 1px 0px 0px black;
+      }
+      .smile {
+        position: absolute;
+        width: 80px;
+        height: 37px;
+        left: 50%;
+        top: 63px;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 39% 43% 47% 52% / 22% 26% 65% 61%;
+      }
+      .smile::before {
+        content: "";
+        position: absolute;
+        width: 110px;
+        height: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+        background: #fbe0b3;
+        /* background: #000000; */
+        border-bottom-left-radius: 45%;
+        border-bottom-right-radius: 50%;
+      }
+      .eyes {
+        position: absolute;
+        width: 33px;
+        height: 30px;
+        left: 40px;
+        top: 33px;
+        background: white;
+        border-radius: 50%;
+      }
+      .eyes::before {
+        position: absolute;
+        content: "";
+        width: 33px;
+        height: 30px;
+        left: 67px;
+        background: white;
+        border-radius: 50%;
+      }
+      .pupils {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        left: 51px;
+        top: 42px;
+        background: black;
+        border-radius: 50%;
+        z-index: 100;
+      }
+      .pupils::before {
+        position: absolute;
+        content: "";
+        width: 13px;
+        height: 13px;
+        left: 66px;
+        background: black;
+        border-radius: 50%;
+      }
+      .hair {
+        position: absolute;
+        left: 50%;
+        top: 140px;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 200px;
+        /* border: solid; */
+        z-index: 0;
+      }
+      .hair1 {
+        position: absolute;
+        width: 23px;
+        height: 43px;
+        left: 50px;
+        background: black;
+        border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%;
+      }
+      .hair1::before {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 43px;
+        left: 1px;
+        top: 1px;
+        background: #fbe0b3;
+        /* background: white; */
+        border-radius: 100% 7% 100% 0% / 100% 0% 100% 0%;
+      }
+      .hair2 {
+        position: absolute;
+        width: 23px;
+        height: 43px;
+        left: 37px;
+        top: 3px;
+        background: black;
+        /* border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%; */
+        clip-path: polygon(57% 100%, 28% 28%, 65% 1%);
+      }
+
+      .hair3 {
+        position: absolute;
+        width: 17px;
+        height: 39px;
+        left: 30px;
+        top: 27px;
+        background: black;
+        border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%;
+        z-index: 0;
+      }
+      .hair3::before {
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 37px;
+        left: 1px;
+        top: 1px;
+        background: #fbe0b3;
+        /* background: white; */
+        border-radius: 100% 7% 100% 0% / 100% 0% 100% 0%;
+      }
+      .hair4 {
+        position: absolute;
+        width: 25px;
+        height: 43px;
+        left: 17px;
+        top: 21px;
+        background: black;
+        /* border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%; */
+        clip-path: polygon(57% 100%, 28% 28%, 65% 1%);
+      }
+      .hair5 {
+        position: absolute;
+        width: 44px;
+        height: 20px;
+        left: 21px;
+        top: 8px;
+        transform-origin: center center;
+        transform: rotate(-37deg);
+        background: black;
+        /* border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%; */
+        border-radius: 45% 27% 64% 22% / 53% 0% 76% 18%;
+        z-index: 0;
+      }
+      .hair5::before {
+        /* content: ""; */
+        position: absolute;
+        width: 17px;
+        height: 37px;
+        left: 1px;
+        top: 1px;
+        background: #fbe0b3;
+        /* background: white; */
+        border-radius: 100% 7% 100% 0% / 100% 0% 100% 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="strawhat">
+        <div class="strawhat-top"></div>
+        <div class="strawhat-red"></div>
+        <div class="strawhat-base"></div>
+      </div>
+      <div class="face">
+        <div class="face-top-right"></div>
+        <div class="face-top-right face-top-left"></div>
+        <div class="face-bottom"></div>
+        <div class="smile"></div>
+        <div class="teeth"></div>
+        <div class="scar"></div>
+        <div class="scar2"></div>
+        <div class="scar3"></div>
+        <div class="eyes"></div>
+        <div class="pupils"></div>
+      </div>
+      <div class="hair">
+        <div class="hair4"></div>
+        <div class="hair3"></div>
+        <div class="hair2"></div>
+        <div class="hair1"></div>
+        <div class="hair5"></div>
+      </div>
+    </div>
+  </body>
+</html>
