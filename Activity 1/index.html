@@ -7,12 +7,12 @@
     <style>
       .container {
         margin: auto;
-        top: 0;
+        top: 50%;
         bottom: 0;
         left: 0;
         right: 0;
         width: 400px;
-        height: 800px;
+        height: 600px;
         /* background: #ef230e; */
         background: #db4332;
       }
@@ -61,6 +61,7 @@
         transform: translateX(-50%);
         width: 180px;
         height: 200px;
+        z-index: 2;
       }
       .face-bottom {
         position: absolute;
@@ -183,6 +184,43 @@
         background: white;
         border-radius: 50%;
       }
+      .eyebrows {
+        position: absolute;
+        width: 21px;
+        height: 2px;
+        left: 50px;
+        top: 27px;
+        background: black;
+        transform-origin: center center;
+        transform: rotate(20deg);
+      }
+      .eyebrows::before {
+        content: "";
+        position: absolute;
+        width: 21px;
+        height: 2px;
+        background: black;
+        transform: rotate(-40deg) translate(53px, 20px);
+      }
+      .nose {
+        position: absolute;
+        border-radius: 50%;
+        width: 10px;
+        height: 13px;
+        background: transparent;
+        left: 47%;
+        transform: translate(-50%, 40px);
+        box-shadow: -2px 0px 0px 0px inset black;
+      }
+      .nose1 {
+        position: absolute;
+        width: 8px;
+        height: 2px;
+        left: 46.5%;
+        top: 54px;
+        background: black;
+        transform: rotate(40deg);
+      }
       .pupils {
         position: absolute;
         width: 13px;
@@ -210,7 +248,19 @@
         width: 180px;
         height: 200px;
         /* border: solid; */
-        z-index: 0;
+        z-index: 5;
+      }
+      .hair-cover {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        background: transparent;
+        left: 50%;
+        top: 1px;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0px -7px 0px 0px black;
       }
       .hair1 {
         position: absolute;
@@ -248,12 +298,13 @@
         height: 39px;
         left: 30px;
         top: 27px;
-        background: black;
+        background: transparent;
         border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%;
-        z-index: 0;
+        /* clip-path: ellipse(11% 50% at 35% 50%); */
+        box-shadow: 7px 2px 0px 0px inset black;
       }
       .hair3::before {
-        content: "";
+        /* content: ""; */
         position: absolute;
         width: 17px;
         height: 37px;
@@ -297,6 +348,562 @@
         /* background: white; */
         border-radius: 100% 7% 100% 0% / 100% 0% 100% 0%;
       }
+      .hair6 {
+        position: absolute;
+        width: 40px;
+        height: 60px;
+        left: 100px;
+        top: 3px;
+        background: black;
+        /* border-radius: 40% 7% 100% 0% / 100% 0% 100% 0%; */
+        /* clip-path: polygon(30% 36%, 44% 59%, 50% 89%, 61% 66%, 55% 41%); */
+        clip-path: polygon(30% 0, 0% 85%, 32% 100%);
+        transform: rotate(160deg);
+      }
+      .hair7 {
+        position: absolute;
+        width: 40px;
+        height: 60px;
+        left: 53px;
+        top: 0px;
+        background: black;
+        clip-path: polygon(30% 0, 0% 85%, 32% 100%);
+        transform: rotate(150deg);
+      }
+      .hair8 {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        left: 50px;
+        top: 2px;
+        background: black;
+        clip-path: polygon(30% 0, 0% 79%, 32% 100%);
+        transform: rotate(145deg);
+      }
+      .hair9 {
+        position: absolute;
+        width: 70px;
+        height: 50px;
+        left: 60px;
+        top: 2px;
+        background: black;
+        clip-path: polygon(29% 0, 0% 60%, 32% 100%);
+        transform: rotate(145deg);
+      }
+      .hair10 {
+        position: absolute;
+        width: 30px;
+        height: 60px;
+        left: 125px;
+        top: 4px;
+        background: black;
+        clip-path: polygon(40% 0, 0% 70%, 32% 100%);
+        transform: rotate(152deg);
+      }
+      .hair11 {
+        position: absolute;
+        width: 40px;
+        height: 70px;
+        left: 110px;
+        top: 0px;
+        background: black;
+        clip-path: polygon(40% 0, 0% 70%, 32% 100%);
+        transform: rotate(155deg);
+      }
+      .hair12 {
+        position: absolute;
+        width: 40px;
+        height: 70px;
+        left: 0px;
+        top: -7px;
+        background: black;
+        clip-path: polygon(40% 0, 0% 70%, 32% 100%);
+        transform: rotate(-145deg);
+      }
+      .neck {
+        position: absolute;
+        background-color: #fbe0b3;
+        width: 30px;
+        height: 20px;
+        left: 320px;
+        top: 270px;
+      }
+      .ear-left {
+        position: absolute;
+        width: 30px;
+        height: 50px;
+        left: 16px;
+        top: 25px;
+        background-color: #fbe0b3;
+        /* background: white; */
+        border-radius: 37% 63% 43% 57% / 46% 34% 66% 54%;
+        transform: rotate(-42deg);
+        border: 1px #000 solid;
+      }
+      .ear-right {
+        position: absolute;
+        width: 30px;
+        height: 50px;
+        left: 134px;
+        top: 25px;
+        background-color: #fbe0b3;
+        /* background: white; */
+        border-radius: 38% 62% 76% 24% / 46% 29% 71% 54%;
+        transform: rotate(13deg);
+        border: 1px #000 solid;
+        z-index: 0;
+      }
+      .shorts {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        left: 50%;
+        top: 350px;
+        transform: translateX(-50%);
+      }
+      .shorts-left {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        left: 35px;
+        top: 20px;
+        /* left: 865px; */
+        /* top: 390px; */
+        background: blue;
+        box-shadow: 2px 2px 0px -1px inset black;
+        clip-path: polygon(45% 0, 100% 0%, 76% 100%, 23% 100%);
+      }
+      .shorts-left::before {
+        content: "";
+        position: absolute;
+        background: black;
+        width: 2px;
+        height: 90px;
+        left: 24px;
+        transform: rotate(12deg);
+      }
+      .shorts-left::after {
+        content: "";
+        position: absolute;
+        background: black;
+        width: 2px;
+        height: 90px;
+        left: 62px;
+        transform: rotate(13deg);
+      }
+      .shorts-right {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        right: 51px;
+        top: 20px;
+        /* left: 900px; */
+        /* top: 390px; */
+        background: blue;
+        clip-path: polygon(26% 0, 75% 0%, 100% 100%, 40% 100%);
+      }
+      .shorts-right::before {
+        content: "";
+        position: absolute;
+        background: black;
+        width: 2px;
+        height: 90px;
+        right: 7px;
+        transform: rotate(-14deg);
+      }
+      .shorts-right::after {
+        content: "";
+        position: absolute;
+        background: black;
+        width: 2px;
+        height: 90px;
+        right: 48px;
+        transform: rotate(-10deg);
+      }
+      .shorts-cuffs {
+        position: absolute;
+        background: white;
+        width: 39px;
+        height: 15px;
+        bottom: 45px;
+        left: 51px;
+        border-radius: 31% 43% 20% 27% / 46% 37% 49% 43%;
+        border-style: solid;
+        border-width: 2px;
+      }
+      .shorts-cuffs::before {
+        content: "";
+        position: absolute;
+        background: white;
+        width: 42px;
+        height: 15px;
+        left: 51px;
+        border-radius: 31% 43% 20% 27% / 46% 37% 49% 43%;
+        border-style: solid;
+        border-width: 2px;
+      }
+      .shorts-belt {
+        position: absolute;
+        width: 70px;
+        height: 20px;
+        /* left: 893px; */
+        left: 50%;
+        transform: translateX(-50%);
+        /* top: 378px; */
+        background-color: #ffd931;
+        /* background: white; */
+        border-radius: 10% 90% 6% 94% / 100% 0% 100% 0%;
+        border: 2px #000 solid;
+        z-index: 5;
+      }
+      /* STRT of neck and body */
+      .neck {
+        position: absolute;
+        background-color: #fbe0b3;
+        width: 10px;
+        height: 20px;
+        left: 50%;
+        top: 270px;
+        transform: translateX(-50%);
+      }
+      .neck2 {
+        position: absolute;
+        background-color: #fbe0b3;
+        width: 7px;
+        height: 20px;
+        left: 50%;
+        top: 276px;
+        transform: translateX(-50%);
+      }
+      .neck3 {
+        position: absolute;
+        background-color: #fbe0b3;
+        width: 7px;
+        height: 20px;
+        left: 50%;
+        top: 276px;
+        transform: translateX(-50%);
+      }
+      .body {
+        position: absolute;
+        background-color: #fbe0b3;
+        width: 50px;
+        height: 100px;
+        left: 50%;
+        top: 280px;
+        transform: translateX(-50%);
+      }
+      .body-scar {
+        position: absolute;
+        width: 57px;
+        height: 57px;
+        left: 50%;
+        top: 290px;
+        transform: translateX(-50%);
+        background: #ef8377;
+        clip-path: polygon(
+          9% 8%,
+          48% 43%,
+          95% 4%,
+          64% 53%,
+          98% 96%,
+          51% 63%,
+          7% 93%,
+          38% 55%
+        );
+      }
+      .upper-limbs {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* border: solid; */
+      }
+      .arms-left {
+        position: absolute;
+        background: #fbe0b3;
+        width: 20px;
+        height: 10px;
+        transform: rotate(-45deg);
+        left: 10px;
+        top: 7px;
+        border: solid 1px;
+      }
+      .arms-right {
+        position: absolute;
+        background: #fbe0b3;
+        width: 20px;
+        height: 10px;
+        transform: rotate(45deg);
+        right: 10px;
+        top: 7px;
+        border: solid 1px;
+      }
+      .hands-left {
+        position: absolute;
+        background: #fbe0b3;
+        width: 23px;
+        height: 23px;
+        left: 0px;
+        top: 10px;
+        border-radius: 100% 0% 66% 73% / 78% 0% 100% 65%;
+        box-shadow: 2px 0px 0px 0px inset black, 0px -2px 0px 0px inset black;
+      }
+      .hands-right {
+        position: absolute;
+        background: #fbe0b3;
+        width: 23px;
+        height: 23px;
+        right: 0px;
+        top: 10px;
+        border-radius: 100% 0% 66% 73% / 78% 0% 100% 65%;
+        transform: scaleX(-1);
+        box-shadow: 2px 0px 0px 0px inset black, 0px -2px 0px 0px inset black;
+      }
+      /* END of neck and body */
+      /* START of left clothing */
+      .jacket {
+        position: absolute;
+        left: 50%;
+        top: 280px;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 200px;
+      }
+      .left-side {
+        position: absolute;
+        background-color: #ec100d;
+        width: 30px;
+        height: 60px;
+        left: 48px;
+        top: 25px;
+        /* top: 300p; */
+        transform: rotate(6deg);
+        box-shadow: -2px -2px 0px -1px inset black, 2px 0px 0px -1px inset black,
+          2px 2px 2px -1px rgba(0, 0, 0, 0.5);
+      }
+      .left-upper1 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 10px;
+        height: 24px;
+        left: 67px;
+        top: 6px;
+        /* left: 648px; */
+        /* top: 275px; */
+        transform: rotate(-20deg);
+        /* border-style: solid; */
+        box-shadow: -2px 0px 0px -1px inset black;
+      }
+      .left-upper2 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 20px;
+        height: 40px;
+        left: 53px;
+        top: -3px;
+        /* left: 635px; */
+        /* top: 275px; */
+        transform: rotate(10deg);
+        /* border-style: solid; */
+        box-shadow: -2px 2px 0px -1px inset black;
+      }
+      .left-sleeve1 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 12px;
+        height: 11px;
+        left: 47px;
+        top: -2px;
+        /* top: 277px; */
+        transform: rotate(70deg);
+        /* border-style: solid; */
+        box-shadow: 2px 0px 0px -1px inset black;
+      }
+      .left-sleeve2 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 20px;
+        height: 50px;
+        left: 23px;
+        top: -1px;
+        /* left: 610px; */
+        /* top: 275px; */
+        transform: rotate(50deg);
+        /* border-style: solid; */
+        box-shadow: 2px -2px 0px -1px inset black, -2px 0px 0px -1px inset black;
+      }
+      .button1 {
+        position: absolute;
+        background-color: #f1e594;
+        width: 6px;
+        height: 6px;
+        left: 70px;
+        top: 28px;
+        border-radius: 50%;
+      }
+      .button2 {
+        position: absolute;
+        background-color: #f1e594;
+        width: 6px;
+        height: 6px;
+        left: 68px;
+        top: 43px;
+        /* left: 651px; */
+        /* top: 320px; */
+        border-radius: 50%;
+      }
+      .button3 {
+        position: absolute;
+        background-color: #f1e594;
+        width: 6px;
+        height: 6px;
+        left: 66px;
+        top: 58px;
+        /* left: 649px; */
+        /* top: 335px; */
+        border-radius: 50%;
+      }
+      /* END of left clothing */
+      /* START of right clothing */
+      .right-side {
+        position: absolute;
+        background-color: #ec100d;
+        width: 30px;
+        height: 60px;
+        right: 48px;
+        top: 25px;
+        /* left: 690px; */
+        /* top: 300px; */
+        transform: rotate(-6deg);
+        box-shadow: -2px -2px 0px -1px inset black, 2px 0px 0px -1px inset black;
+      }
+      .right-upper1 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 10px;
+        height: 24px;
+        right: 67px;
+        top: 6px;
+        /* left: 692px; */
+        /* top: 275px; */
+        transform: rotate(20deg);
+        /* border-style: solid; */
+        box-shadow: 2px 0px 0px -1px inset black;
+      }
+      .right-upper2 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 20px;
+        height: 40px;
+        right: 53px;
+        top: -3px;
+        /* left: 695px; */
+        /* top: 275px; */
+        transform: rotate(-10deg);
+        /* border-style: solid; */
+        box-shadow: 2px 2px 0px -1px inset black;
+      }
+      .right-sleeve1 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 12px;
+        height: 11px;
+        right: 47px;
+        top: -2px;
+        /* top: 277px; */
+        transform: rotate(-70deg);
+        /* border-style: solid; */
+        box-shadow: -2px 0px 0px -1px inset black;
+      }
+      .right-sleeve2 {
+        position: absolute;
+        background-color: #ec100d;
+        width: 20px;
+        height: 50px;
+        right: 23px;
+        top: -1px;
+        /* left: 610px; */
+        /* top: 275px; */
+        transform: rotate(-50deg);
+        /* border-style: solid; */
+        box-shadow: 2px -2px 0px -1px inset black, -2px 0px 0px -1px inset black;
+      }
+      /* END of right clothing */
+      .bottom {
+        position: absolute;
+        width: 100px;
+        height: 80px;
+        left: 50%;
+        top: 440px;
+        transform: translateX(-50%);
+      }
+      .legs {
+        position: absolute;
+        background: #fbe0b3;
+        width: 17px;
+        height: 50px;
+        left: 13px;
+        transform: rotate(-3deg);
+        border: solid 1px;
+        box-shadow: 0px 11px 1px 0px inset black;
+      }
+      .legs::before {
+        content: "";
+        position: absolute;
+        background: #fbe0b3;
+        width: 17px;
+        height: 50px;
+        top: 5px;
+        left: 51px;
+        border: solid 1px;
+        transform: rotate(5deg);
+        box-shadow: 0px 11px 1px 0px inset black;
+      }
+      .feet {
+        position: absolute;
+        background: #fbe0b3;
+        width: 30px;
+        height: 15px;
+        bottom: 16px;
+        left: 10px;
+        border-radius: 31% 43% 20% 27% / 76% 75% 15% 9%;
+        box-shadow: 0px 2px 0px -1px inset black;
+      }
+      .feet::before {
+        content: "";
+        position: absolute;
+        background: #fbe0b3;
+        width: 30px;
+        height: 15px;
+        left: 49px;
+        border-radius: 31% 43% 20% 27% / 76% 75% 15% 9%;
+        box-shadow: 0px 2px 0px -1px inset black;
+      }
+      .slippers {
+        position: absolute;
+        width: 34px;
+        height: 5px;
+        background: #cdb494;
+        bottom: 10px;
+        left: 8px;
+        border: solid 1px;
+        border-radius: 20%;
+        box-shadow: 0px -1px 0px 0px inset black, 0px 3px 5px 0px black;
+      }
+      .slippers::before {
+        content: "";
+        position: absolute;
+        width: 34px;
+        height: 5px;
+        background: #cdb494;
+        left: 47px;
+        top: -1px;
+        border: solid 1px;
+        border-radius: 20%;
+        box-shadow: 0px -1px 0px 0px inset black, 0px 3px 5px 0px black;
+      }
     </style>
   </head>
   <body>
@@ -307,6 +914,8 @@
         <div class="strawhat-base"></div>
       </div>
       <div class="face">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
         <div class="face-top-right"></div>
         <div class="face-top-right face-top-left"></div>
         <div class="face-bottom"></div>
@@ -317,6 +926,9 @@
         <div class="scar3"></div>
         <div class="eyes"></div>
         <div class="pupils"></div>
+        <div class="eyebrows"></div>
+        <div class="nose"></div>
+        <div class="nose1"></div>
       </div>
       <div class="hair">
         <div class="hair4"></div>
@@ -324,6 +936,52 @@
         <div class="hair2"></div>
         <div class="hair1"></div>
         <div class="hair5"></div>
+        <!-- try hair -->
+        <div class="hair6"></div>
+        <div class="hair7"></div>
+        <div class="hair8"></div>
+        <div class="hair9"></div>
+        <div class="hair10"></div>
+        <div class="hair11"></div>
+        <div class="hair12"></div>
+        <div class="hair-cover"></div>
+      </div>
+      <div class="neck"></div>
+      <div class="neck2"></div>
+      <div class="neck3"></div>
+      <div class="body"></div>
+      <div class="body-scar"></div>
+      <div class="bottom">
+        <div class="legs"></div>
+        <div class="feet"></div>
+        <div class="slippers"></div>
+      </div>
+      <div class="shorts">
+        <div class="shorts-left"></div>
+        <div class="shorts-right"></div>
+        <div class="shorts-belt"></div>
+        <div class="shorts-cuffs"></div>
+      </div>
+      <div class="upper-limbs">
+        <div class="arms-left"></div>
+        <div class="arms-right"></div>
+        <div class="hands-left"></div>
+        <div class="hands-right"></div>
+      </div>
+      <div class="jacket">
+        <div class="left-upper2"></div>
+        <div class="left-side"></div>
+        <div class="left-upper1"></div>
+        <div class="button1"></div>
+        <div class="button2"></div>
+        <div class="button3"></div>
+        <div class="left-sleeve1"></div>
+        <div class="left-sleeve2"></div>
+        <div class="right-upper2"></div>
+        <div class="right-side"></div>
+        <div class="right-upper1"></div>
+        <div class="right-sleeve1"></div>
+        <div class="right-sleeve2"></div>
       </div>
     </div>
   </body>
