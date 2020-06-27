@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter Subscription</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1>Newsletter Subscription</h1>
+        <p>Sign up for free newsletters and get more delivered to your inbox</p>
+        <form action="">
+          <div class="row">
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              name="full-name"
+              id="full-name"
+              required=""
+              aria-required="true"
+            />
+          </div>
+          <div class="row">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required=""
+              aria-required="false"
+            />
+          </div>
+          <div class="row">
+            <label for="list">List</label>
+            <select name="list" id="list">
+              <option value="">Test</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="source">Source</label>
+            <textarea name="source" id="source"> </textarea>
+          </div>
+          <div class="row">
+            <input type="checkbox" name="agree" id="agree" />
+            <label for="agree"
+              >You agree to receive occasional updates and special offers from
+              us.</label
+            >
+          </div>
+          <div class="row"></div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
