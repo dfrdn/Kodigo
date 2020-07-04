@@ -7,6 +7,8 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+  font-size: 62.5%;
 }
 
 *,
@@ -21,21 +23,12 @@ h3 {
   font-family: "montserrat", sans-serif;
 }
 
-text-center {
+.text-center {
   text-align: center;
 }
 
-text-white {
+.text-white {
   color: var(--light-text-color);
-}
-
-#menu-logo {
-  position: relative;
-  width: 120px;
-  height: auto;
-  background: url(../images/sakay-logo.svg) no-repeat;
-  background-size: contain;
-  color: transparent;
 }
 
 body {
@@ -49,4 +42,107 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#menu {
+  height: 52px;
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0 14px;
+  overflow: hidden;
+}
+
+#menu-logo {
+  filter: brightness(100);
+  position: relative;
+  width: 12rem;
+  height: 4.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  background: url(../images/sakay-logo.svg) no-repeat;
+  background-size: contain;
+  color: transparent;
+}
+
+header p {
+  max-width: 300px;
+  font-size: 1.8em;
+  line-height: 2.6rem;
+  margin: 0.8rem auto;
+}
+
+#logo {
+  display: block;
+  margin: 32px auto 0.8em;
+  width: 100px;
+}
+
+form {
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: space-between;
+}
+
+.search {
+  border: 0.1rem solid #d2e2d4;
+  height: 6.4rem;
+  outline: 0;
+  border-radius: 0.8rem;
+  background-color: white;
+  margin: 0 2rem;
+  font-size: 1.6rem;
+}
+
+#search-input {
+  width: 16rem;
+  color: var(--dark-text-color);
+  border: 0;
+  margin: 0 2rem;
+  outline: 0;
+  font-weight: 500;
+  border-radius: 0.8rem;
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #95d458;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  box-shadow: none;
+  border: none;
+  margin: 0 1.6rem;
+}
+
+.mobile-images {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.mobile-image {
+  height: 34px;
+  margin: 0.4rem;
+}
+
+#intro {
+  background-color: var(--primary-color);
+}
+
+#tagline {
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  margin: 0;
+}
+
+footer {
+  background: var(--primary-color);
 }
