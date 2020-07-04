@@ -3,12 +3,32 @@
   --light-text-color: white;
   --primary-color: #6dde5f;
   --secondary-color: #f8f8f8;
+
+  --max-width-multiplier: 1;
+  --column-number: 1;
 }
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 
   font-size: 62.5%;
+}
+
+@media (min-width: 386px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+
+  :root {
+    --max-width-multiplier: 1.5;
+    --column-number: 2;
+  }
 }
 
 *,
@@ -48,7 +68,7 @@ a {
   text-decoration: none;
 }
 
-section:nth-of-type(2n + 1) {
+#features:nth-child(odd) {
   background-color: white;
 }
 
@@ -57,16 +77,17 @@ section {
 }
 
 #menu {
-  height: 52px;
+  height: 5.2rem;
   background-color: var(--primary-color);
   margin: 0;
-  padding: 0 14px;
+  padding: 0 1.4rem;
   overflow: hidden;
+  position: relative;
 }
 
 #menu-logo {
   filter: brightness(100);
-  position: relative;
+  position: absolute;
   width: 12rem;
   height: 4.2rem;
   top: 50%;
@@ -78,8 +99,40 @@ section {
   color: transparent;
 }
 
+#menu-logo:hover {
+  filter: drop-shadow(0 0 0 1rem var(--dark-text-color));
+}
+
+#menu-list {
+  position: absolute;
+  display: block;
+  list-style-type: none;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.menu-item {
+  display: inline-block;
+}
+
+header > menu > a {
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #menu {
+    background-color: transparent;
+    height: 10rem;
+    padding: 0 6rem;
+  }
+
+  #menu-logo {
+    filter: none;
+  }
+}
 header p {
-  max-width: 300px;
+  max-width: calc(300px * var(--max-width-multiplier));
   font-size: 1.8em;
   line-height: 2.6rem;
   margin: 2rem auto;
@@ -107,6 +160,7 @@ form {
   background-color: white;
   margin: 0 1rem;
   font-size: 1.6rem;
+  max-width: 60rem;
 }
 
 #search-input {
@@ -142,8 +196,14 @@ form {
   margin: 0.4rem;
 }
 
+@media (min-width: 600px) {
+  .search {
+    margin: 0 auto;
+  }
+}
+
 #intro {
-  height: 72rem;
+  height: 77rem;
   background-color: var(--secondary-color);
   position: relative;
 }
@@ -251,4 +311,41 @@ h3 {
 
 footer {
   background: var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.row {
+  display: flow-root;
+}
+
+.col-feature,
+.col-feature-img {
+  padding: 2rem;
+  float: left;
+  width: calc(100% / var(--column-number));
+}
+
+#features p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.illustration {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+footer a,
+footer ul {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-footer {
+  filter: brightness(100);
+  width: 18em;
 }
