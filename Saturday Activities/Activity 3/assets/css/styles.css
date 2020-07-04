@@ -48,6 +48,14 @@ a {
   text-decoration: none;
 }
 
+section:nth-of-type(2n + 1) {
+  background-color: white;
+}
+
+section {
+  padding: 3.2rem 0;
+}
+
 #menu {
   height: 52px;
   background-color: var(--primary-color);
@@ -74,7 +82,7 @@ header p {
   max-width: 300px;
   font-size: 1.8em;
   line-height: 2.6rem;
-  margin: 0.8rem auto;
+  margin: 2rem auto;
 }
 
 #logo {
@@ -97,7 +105,7 @@ form {
   outline: 0;
   border-radius: 0.8rem;
   background-color: white;
-  margin: 0 2rem;
+  margin: 0 1rem;
   font-size: 1.6rem;
 }
 
@@ -109,6 +117,7 @@ form {
   outline: 0;
   font-weight: 500;
   border-radius: 0.8rem;
+  font-size: 1.6rem;
 }
 
 .search-btn {
@@ -134,12 +143,109 @@ form {
 }
 
 #intro {
-  background-color: var(--primary-color);
+  height: 72rem;
+  background-color: var(--secondary-color);
+  position: relative;
+}
+
+.container-phone {
+  position: relative;
+  perspective: 90rem;
+  margin: 1.6rem auto 0;
+  padding: 2.4rem 0;
+}
+
+#intro::before {
+  content: "";
+  position: absolute;
+  height: 46rem;
+  width: 100%;
+  bottom: 0;
+  background: #4cd964 url(../images/hero-lines.svg) no-repeat bottom center;
+  z-index: 0;
+  background-size: cover;
 }
 
 #tagline {
   font-size: 2.8rem;
   line-height: 4.2rem;
+  margin: 0;
+}
+
+#phone {
+  position: relative;
+  margin: 3.6rem auto 2.4rem;
+  width: 20rem;
+  height: 40.6rem;
+  transform-style: preserve-3d;
+  transform: rotateY(-19deg);
+  z-index: 1;
+}
+
+#phone > div,
+#phone::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2.4rem;
+}
+
+#phone::before {
+  display: block;
+  content: "";
+  transform: translateZ(-2.5rem) scale(1.025);
+  background-color: #e73f51;
+}
+
+#phone .front {
+  box-shadow: inset 0 0.4rem 0.7rem 0.4rem white,
+    inset 0 -0.5rem 2.5rem rgba(173, 173, 173, 0.5),
+    0 2.2rem 10rem -1.5rem rgba(0, 0, 0, 0.4);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#phone .content {
+  background: #dddddd;
+  width: 19.2rem;
+  border: 0.2rem solid #cccccc;
+  border-radius: 0.3rem;
+}
+
+.container-intro h2 {
+  position: relative;
+  max-width: 30rem;
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  margin: 0 auto;
+}
+
+.container-intro p {
+  position: relative;
+  max-width: 30rem;
+  line-height: 2.6rem;
+  font-size: 1.8rem;
+  margin: 2rem auto;
+}
+
+#testimonials {
+  padding: 6.4rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 3.8rem;
   margin: 0;
 }
 

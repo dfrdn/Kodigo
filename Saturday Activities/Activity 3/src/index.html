@@ -24,6 +24,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap"
     />
+    <link rel="stylesheet" href="https://use.typekit.net/jbk0rbo.css" />
   </head>
   <body>
     <header>
@@ -50,11 +51,11 @@
           <form action="#">
             <input
               type="text"
-              name=""
+              name="search-input"
               id="search-input"
               placeholder="Where are you going?"
             />
-            <button class="search-btn text-white">Go</button>
+            <button class="search-btn text-white"><strong>Go</strong></button>
           </form>
         </div>
       </div>
@@ -97,21 +98,25 @@
       </div>
     </header>
     <section id="intro">
-      <div class="container">
+      <div class="container-phone">
+        <figure id="phone">
+          <div class="front">
+            <div id="shine" class="iphone"></div>
+            <img
+              alt="Commute directions from Farmers Plaza, Cubao to Alabang Town Center"
+              class="content"
+              src="../assets/images/sakay_cubao_farmers_plaza_to_alabang_town_center-2ed6260fd7fd27dd215986866d4f7c32.jpeg"
+            />
+          </div>
+        </figure>
+      </div>
+      <div class="container-intro">
         <div class="row">
           <div class="col">
-            <figure id="phone">
-              <div class="front">
-                <div id="shine" class="iphone"></div>
-                <img
-                  alt="Commute directions from Farmers Plaza, Cubao to Alabang Town Center"
-                  class="content"
-                  src="../assets/images/sakay_cubao_farmers_plaza_to_alabang_town_center-2ed6260fd7fd27dd215986866d4f7c32.jpeg"
-                />
-              </div>
-            </figure>
-            <h2 class="text-white">The best directions, in your pocket.</h2>
-            <p class="text-white">
+            <h2 class="text-white text-center">
+              The best directions, in your pocket.
+            </h2>
+            <p class="text-white text-center">
               Get our app for <strong>iPhone</strong> or
               <strong>Android</strong> and commute confidently, wherever you
               are.
@@ -121,11 +126,13 @@
       </div>
     </section>
     <section id="testimonials">
-      <div class="container">
+      <div class="container-testimonials">
         <div class="row">
           <div class="col">
-            <h2>Loved by half a million people ❤️</h2>
-            <h3>We've served over 20 million routes and counting!</h3>
+            <h2 class="text-center">Loved by half a million people ❤️</h2>
+            <h3 class="text-center">
+              We've served over 20 million routes and counting!
+            </h3>
           </div>
         </div>
       </div>
@@ -133,7 +140,10 @@
     <section id="partners">
       <div class="container">
         <div class="row">
-          <div class="col"></div>
+          <div class="col">
+            <h2 class="text-center">Our Partners</h2>
+            <h3 class="text-center">Our wonderful partners</h2>
+          </div>
         </div>
       </div>
     </section>
