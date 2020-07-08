@@ -141,7 +141,7 @@ header p {
 #logo {
   display: block;
   margin: 32px auto 0.8em;
-  width: 100px;
+  width: calc(100px * var(--max-width-multiplier));
 }
 
 form {
@@ -192,7 +192,7 @@ form {
 }
 
 .mobile-image {
-  height: 34px;
+  height: calc(34px * var(--max-width-multiplier));
   margin: 0.4rem;
 }
 
