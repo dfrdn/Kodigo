@@ -22,7 +22,7 @@ html {
 
 @media (min-width: 768px) {
   html {
-    font-size: 100%;
+    font-size: 85%;
   }
 
   :root {
@@ -35,6 +35,10 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+div {
+  border: solid 1px;
 }
 
 h1,
@@ -64,16 +68,17 @@ body {
   margin: 0;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
 a {
   text-decoration: none;
 }
 
 #features:nth-child(odd) {
   background-color: white;
-}
-
-section {
-  padding: 3.2rem 0;
 }
 
 #menu {
@@ -83,15 +88,15 @@ section {
   padding: 0 1.4rem;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #menu-logo {
   filter: brightness(100);
-  position: absolute;
   width: 12rem;
   height: 4.2rem;
-  top: 50%;
-  transform: translateY(-50%);
   margin: 0;
   padding: 0;
   background: url(../images/sakay-logo.svg) no-repeat;
@@ -104,12 +109,7 @@ section {
 }
 
 #menu-list {
-  position: absolute;
-  display: none;
   list-style-type: none;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
 }
 
 .menu-item {
@@ -203,13 +203,13 @@ form {
 }
 
 #intro {
-  height: 77rem;
+  /* height: 77rem; */
   background-color: var(--secondary-color);
   position: relative;
 }
 
 .container-phone {
-  position: relative;
+  /* position: relative; */
   perspective: 90rem;
   margin: 1.6rem auto 0;
   padding: 2.4rem 0;
@@ -222,7 +222,6 @@ form {
   width: 100%;
   bottom: 0;
   background: #4cd964 url(../images/hero-lines.svg) no-repeat bottom center;
-  z-index: 0;
   background-size: cover;
 }
 
@@ -316,7 +315,9 @@ footer {
 }
 
 .row {
-  display: flow-root;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .col-feature,
