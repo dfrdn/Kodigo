@@ -1,6 +1,8 @@
 :root {
   --primary-color: #0d2f81;
   --secondary-color: #ffe7aa;
+
+  --padding-multiplier: 1;
 }
 
 html {
@@ -61,7 +63,7 @@ p {
 
 .row {
   display: flex;
-  padding: 0 60px;
+  padding: 0 calc(60px * var(--padding-multiplier));
   /* flex-wrap: wrap; */
   /* border: solid; */
 }
@@ -77,6 +79,14 @@ p {
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
+}
+
+.quarter {
+    width: 25%;
+}
+
+.justify-space-around {
+    justify-content: space-around;
 }
 
 .nav {
@@ -98,7 +108,7 @@ p {
 .menu {
   position: fixed;
   width: 100%;
-  padding: 0 60px;
+  padding: 0 calc(60px * var(--padding-multiplier));
   max-width: 1440px;
   top: 0;
   height: 90px;
@@ -182,6 +192,7 @@ nav ol li {
 
 #beginning .copy {
   align-content: flex-start;
+  padding: 60px 0;
 }
 
 #beginning .content {
@@ -192,7 +203,7 @@ nav ol li {
 #beginning .features {
   display: flex;
   justify-content: space-around;
-  padding-top: 120px;
+  padding-top: calc120px * var(--padding-multiplier));
   flex-wrap: wrap;
 }
 
@@ -212,8 +223,12 @@ nav ol li {
   font-size: 4rem;
   line-height: 4.6rem;
   font-weight: 500;
-  align-self: flex-start;
+  margin: 0;
   margin-bottom: 50px;
+}
+
+#beginning .headline {
+  align-self: flex-start;
 }
 
 #beginning .features button {
@@ -227,6 +242,7 @@ nav ol li {
   padding: 12px 50px;
   font-size: 1.6rem;
   line-height: 2.6rem;
+  align-self: flex-start;
 }
 
 #beginning .btn {
@@ -239,12 +255,12 @@ footer {
   background: black;
   color: white;
   min-width: 320px;
-  padding: 0 45px;
+  padding: 0 calc(45px * var(--padding-multiplier));
 }
 
 footer .container {
   min-width: 320px;
-  padding: 0 45px;
+  padding: 0 calc(45px * var(--padding-multiplier));
 }
 
 .footer-links {
@@ -259,7 +275,7 @@ footer .container {
 
 .sub-footer {
   max-width: 1080px;
-  padding: 0 60px;
+  padding: 0 calc(60px * var(--padding-multiplier));
 }
 
 .sub-footer p {
@@ -285,13 +301,13 @@ footer ul {
 
 section {
   position: relative;
-  padding: 120px 0;
+  padding: calc(120px * var(--padding-multiplier)) 0;
 }
 
 .header {
   display: flex;
   flex-flow: column wrap;
-  margin-left: 8.33%;
+  margin-left: calc(8.33% / 2);
   margin-bottom: 50px;
 }
 
@@ -305,6 +321,10 @@ section {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --padding-multiplier: 0.5;
+  }
+
   .menu {
     height: 70px;
   }
@@ -323,6 +343,9 @@ section {
   #beginning .features {
     /* flex-direction: column; */
     justify-content: flex-start;
+  }
+  .header {
+    margin-left: 8.33%;
   }
   .half {
     width: 100%;
