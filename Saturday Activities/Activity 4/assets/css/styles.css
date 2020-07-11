@@ -62,7 +62,7 @@ p {
 .row {
   display: flex;
   padding: 0 60px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* border: solid; */
 }
 
@@ -192,7 +192,8 @@ nav ol li {
 #beginning .features {
   display: flex;
   justify-content: space-around;
-  padding: 120px 0;
+  padding-top: 120px;
+  flex-wrap: wrap;
 }
 
 #beginning img {
@@ -207,19 +208,30 @@ nav ol li {
   height: 100vh;
 }
 
-#beginning .features .headline {
-  width: 50%;
-}
-
 #beginning .features .headline h2 {
   font-size: 4rem;
   line-height: 4.6rem;
   font-weight: 500;
   align-self: flex-start;
-  margin: 0;
+  margin-bottom: 50px;
 }
 
 #beginning .features button {
+  align-self: flex-start;
+}
+
+.btn {
+  outline: none;
+  background-color: #0061ff;
+  color: white;
+  padding: 12px 50px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+#beginning .btn {
+  background-color: white;
+  color: black;
   align-self: flex-start;
 }
 
@@ -273,7 +285,7 @@ footer ul {
 
 section {
   position: relative;
-  padding-top: 90px;
+  padding: 120px 0;
 }
 
 .header {
@@ -307,6 +319,10 @@ section {
   }
   #beginning .xs-text {
     display: block;
+  }
+  #beginning .features {
+    /* flex-direction: column; */
+    justify-content: flex-start;
   }
   .half {
     width: 100%;
