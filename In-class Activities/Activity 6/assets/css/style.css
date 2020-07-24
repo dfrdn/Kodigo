@@ -1,0 +1,31 @@
+.carousel-img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+#lawyers .row:nth-child(2n) {
+  background-color: var(--light);
+}
+@media (min-width: 992px) {
+  #lawyers .row:nth-child(2n) .lawyer-img {
+    order: 2;
+  }
+
+  #lawyers .row:nth-child(2n) .lawyer-info {
+    order: 1;
+  }
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+}
+
+#cta {
+  background-color: var(--light);
+}
+
+body {
+  position: relative;
+}

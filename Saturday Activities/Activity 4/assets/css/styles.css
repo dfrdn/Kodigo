@@ -82,11 +82,11 @@ p {
 }
 
 .quarter {
-    width: 25%;
+  width: 25%;
 }
 
 .justify-space-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .nav {
@@ -164,7 +164,8 @@ nav ol li {
   line-height: 1.625em;
 }
 
-#goodbye nav ol li {
+#goodbye nav ol li,
+#get nav ol li {
   color: black;
 }
 
@@ -203,7 +204,7 @@ nav ol li {
 #beginning .features {
   display: flex;
   justify-content: space-around;
-  padding-top: calc120px * var(--padding-multiplier));
+  padding-top: calc(120px * var(--padding-multiplier));
   flex-wrap: wrap;
 }
 
@@ -307,8 +308,12 @@ section {
 .header {
   display: flex;
   flex-flow: column wrap;
-  margin-left: calc(8.33% / 2);
+  margin-left: 8.33%;
   margin-bottom: 50px;
+}
+
+#get .header {
+  margin-left: calc(8.33% / 2);
 }
 
 .content {
